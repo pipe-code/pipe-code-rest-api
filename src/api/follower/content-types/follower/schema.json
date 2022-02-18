@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followers",
+  "info": {
+    "singularName": "follower",
+    "pluralName": "followers",
+    "displayName": "Followers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nickname": {
+      "type": "string"
+    },
+    "UserID": {
+      "type": "uid",
+      "targetField": "Nickname",
+      "required": false
+    },
+    "Avatar": {
+      "type": "richtext"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Validated": {
+      "type": "boolean",
+      "default": false
+    },
+    "AccessToken": {
+      "type": "string"
+    }
+  }
+}
