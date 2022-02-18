@@ -15,6 +15,7 @@
     "@strapi/plugin-users-permissions": "4.1.0",
     "@strapi/strapi": "4.1.0",
     "mysql": "^2.18.1",
+    "slugify": "^1.6.5",
     "socket.io": "^2.4.1",
     "sqlite3": "5.0.2"
   },
