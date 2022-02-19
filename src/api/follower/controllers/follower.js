@@ -10,9 +10,6 @@ const slugify = require('slugify');
 module.exports = createCoreController('api::follower.follower', ({ strapi }) =>  ({
 
     async create (ctx) {
-        
-        // const response = await super.create(ctx);
-        // return response;
 
         const randomCharacters = (length) => {
             var result           = '';
@@ -26,7 +23,7 @@ module.exports = createCoreController('api::follower.follower', ({ strapi }) => 
         
 
         let newData = ctx.request.body.data;
-        const { Nickname } = ctx.request.body.data;
+        const { Nickname, Email } = ctx.request.body.data;
 
         newData = { 
             ...newData, 
@@ -35,9 +32,14 @@ module.exports = createCoreController('api::follower.follower', ({ strapi }) => 
             AccessToken: randomCharacters(20)
         }
 
+        await strapi.plugins['email'].services.email.send({
+            to: Email,
+            from: 'pipecode.info@gmail.com',
+            subject: 'Use strapi email provider successfully',
+            html: 'Hello world!'
+        });
 
-        const response = await strapi.api.follower.services.follower.create({ data: newData });
 
-        return response;
+        return await strapi.api.follower.services.follower.create({ data: newData });
     }
 }));

@@ -17,7 +17,8 @@
     "mysql": "^2.18.1",
     "slugify": "^1.6.5",
     "socket.io": "^2.4.1",
-    "sqlite3": "5.0.2"
+    "sqlite3": "5.0.2",
+    "strapi-provider-email-smtp": "^1.0.3"
   },
   "author": {
     "name": "A Strapi developer"
